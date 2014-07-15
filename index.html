@@ -1,7 +1,13 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
-</html>
+---
+layout:default
+title:myblog
+---
+<h2></h2>
+<p>lastest posts</p>
+<ul>
+{% for post in site.posts %}
+<li>{{ post.date | date_to_string}}
+<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+</li>
+<% endfor %>
+</ul>
